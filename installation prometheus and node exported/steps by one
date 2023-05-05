@@ -5,4 +5,4 @@ open prometheus server goto /etc/prometheus/prometheus.yaml file
 add the targeted machine ip and port
 
 
-sudo service start prometheus
+sudo systemctl start prometheus
