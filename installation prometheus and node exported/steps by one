@@ -1,6 +1,40 @@
+
+
 install prometheus into server
 install node exporter to the target machine and check the metrics by giving http://ip:9100/metrics
 open prometheus server goto /etc/prometheus/prometheus.yaml file
+
+We can add ips manually or using service discovery(this will automatically discoveries the instance )
+
+
+mauallly code
+
+global:
+  scrape_interval: 15s
+
+scrape_configs:
+  - job_name: 'prometheus'
+    scrape_interval: 5s
+    static_configs:
+      - targets: ['34.125.99.54:9100']
+      
+ service discovery code
+ 
+ global:
+  scrape_interval: 15s
+ 
+ scrape_configs:
+  - job_name: 'node'
+    ec2_sd_configs:
+      - region: us-east-2
+        access_key: yourkey   ###AWS ACESS key
+        secret_key: yourkey
+        port: 9100
+ 
+ 
+
+
+
 
 add the targeted machine ip and port
 
