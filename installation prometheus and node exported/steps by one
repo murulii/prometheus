@@ -1,0 +1,8 @@
+install prometheus into server
+install node exporter to the target machine and check the metrics by giving http://ip:9100/metrics
+open prometheus server goto /etc/prometheus/prometheus.yaml file
+
+add the targeted machine ip and port
+
+
+sudo service start prometheus
