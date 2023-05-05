@@ -1,5 +1,7 @@
 Make a file     ./install-node-exporter.sh
 
+After installation of below code check metrics working or not by http://34.125.99.54:9100/metrics  using this link
+
 paste the below code into the above sh file and run
 
 sudo useradd --no-create-home node_exporter
