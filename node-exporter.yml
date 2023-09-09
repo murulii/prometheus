@@ -1,0 +1,19 @@
+###this code will deploy on all docker container in docker swarm using global reference
+version: '3'
+services:
+  node-exporter:
+    image: prom/node-exporter
+    ports:
+      - '9100:9100'
+    
+    volumes:
+      - /proc:/host/proc:ro
+      - /sys:/host/sys:ro
+      - /:/rootfs:ro
+    command:
+      - '--path.rootfs=/rootfs'
+    deploy:
+      mode: global
+networks:
+  hostnet:
+    external: true
